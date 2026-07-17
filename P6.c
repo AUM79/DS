@@ -1,29 +1,38 @@
 #include <stdio.h>
-#include <conio.h>
 
-struct student
-{
-    int rollno;
-    char name[20];
-};
+int main() {
+    int arr[100], n, element, position, i;
 
-void main()
-{
-    struct student s1;
-    clrscr();
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
 
-    printf("Enter Roll Number: ");
-    scanf("%d", &s1.rollno);
+    printf("Enter the array elements:\n");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
 
-    getchar();   // Consume the newline left by scanf()
+    printf("Enter the element to insert: ");
+    scanf("%d", &element);
 
-    printf("Enter Name: ");
-    fgets(s1.name, sizeof(s1.name), stdin);
+    printf("Enter the position: ");
+    scanf("%d", &position);
 
-    printf("\nStudent Data is as follows");
-    printf("\n************************");
-    printf("\nRoll Number : %d", s1.rollno);
-    printf("\nName        : %s", s1.name);
+    if (position < 1 || position > n + 1) {
+        printf("Invalid position");
+        return 0;
+    }
 
-    getch();
+    for (i = n; i >= position; i--) {
+        arr[i] = arr[i - 1];
+    }
+
+    arr[position - 1] = element;
+    n++;
+
+    printf("Array after insertion:\n");
+    for (i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
 }
