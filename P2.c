@@ -14,7 +14,7 @@ void main()
         scanf("%d",&a[i]);
         sum=sum+a[i];
     }
-    avg=sum/10.0; // here we have to take 10.0 otherwise it will be consider as int remember this thing.
+    avg=sum/10.0; 
 
     printf("Sum = %d\n",sum);
     printf("Average = %f\n",avg);
