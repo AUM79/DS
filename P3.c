@@ -7,7 +7,7 @@ void main()
     int A[3],B[3],C[3];
     int i;
 
-    // Input values for array A
+    
     printf("Enter 3 integers for array A:\n");
     for(i = 0; i < 3; i++) {
         scanf("%d", &A[i]);
